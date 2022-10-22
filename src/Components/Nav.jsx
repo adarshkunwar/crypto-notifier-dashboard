@@ -3,10 +3,10 @@ import { IoMdNotifications } from "react-icons/io";
 import { AiFillHeart } from "react-icons/ai";
 function Nav() {
   return (
-    <div className="w-screen text-xl flex-col space-y-4">
+    <div className="flex-col w-screen space-y-4">
       <hr />
       {/* main nav starts here */}
-      <div className="flex justify-between items-center mx-32">
+      <div className="flex justify-between -ml-5 px-36 items-center ">
         <div className="text-green-400 font-bold text-2xl cursor-pointer">
           Crypto Notifier
         </div>

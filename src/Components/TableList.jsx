@@ -2,6 +2,9 @@ import React from "react";
 import { AiFillHeart } from "react-icons/ai";
 
 const TableList = (props) => {
+  // const checkColor = (props.data.changeIn24) => {
+  //   if()
+  // }
   return (
     <div className=" bg-white border py-3 grid grid-cols-12 items-center font-semibold">
       <div className="col-span-1 pl-7">
@@ -25,7 +28,9 @@ const TableList = (props) => {
       <div className="col-span-2">{props.data.market_cap}</div>
       <div
         className={`col-span-2 ${
-          props.data.changeIn24 > 0 ? "text-green-500" : "text-red-700"
+          parseFloat(props.data.changeIn24) > 0
+            ? "text-green-500"
+            : "text-red-700"
         }`}
       >
         {props.data.changeIn24}
