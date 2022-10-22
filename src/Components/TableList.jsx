@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiFillHeart } from "react-icons/ai";
 
 const TableList = (props) => {
-  // const checkColor = (props.data.changeIn24) => {
-  //   if()
-  // }
+  const [watchActive, setWatchActive] = useState(false);
+
   return (
     <div className=" bg-white border py-3 grid grid-cols-12 items-center font-semibold">
-      <div className="col-span-1 pl-7">
+      <div
+        className={`col-span-1 pl-7 ${
+          watchActive === true ? "text-red-600" : "text-black"
+        }`}
+        onClick={() => setWatchActive(!watchActive)}
+      >
         <AiFillHeart />
       </div>
       <div className="col-span-1">{props.data.rank}</div>

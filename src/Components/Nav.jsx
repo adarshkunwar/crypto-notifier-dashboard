@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoMdNotifications } from "react-icons/io";
 import { AiFillHeart } from "react-icons/ai";
 function Nav() {
+  const [watchActive, setWatchActive] = useState(true);
+
   return (
     <div className="flex-col w-screen space-y-4">
       <hr />
@@ -20,9 +22,16 @@ function Nav() {
                 </div>
               </div>
             </div>
-            <div className="group border flex items-center justify-center rounded-md border-green-500 hover:border-none hover:bg-green-500  px-3 py-2 cursor-pointer">
+            <div
+              className="group border flex items-center justify-center rounded-md border-green-500 hover:border-none hover:bg-green-500  px-3 py-2 cursor-pointer"
+              onClick={() => setWatchActive(!watchActive)}
+            >
               <div className="flex items-center gap-2">
-                <div className={``}>
+                <div
+                  className={`${
+                    watchActive === true ? "text-red-600" : "text-black"
+                  }`}
+                >
                   <AiFillHeart />
                 </div>
                 <div className="text-green-400 group-hover:text-white">
